@@ -1,0 +1,19 @@
+.header {
+    height: 10vh;
+}
+
+.main {
+    min-height: 85vh;
+}
+
+.footer {
+    height: 5vh;
+}
+
+.header, .footer {
+    background-color: rgb(10, 110, 187);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
