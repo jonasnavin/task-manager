@@ -28,13 +28,22 @@ export const DataProvider = ({ children }) => {
             const allTasks = [...tasks, task]
             setTasks(allTasks)
             setAddTask('')
+            setSearchTask('')
             localStorage.setItem("task-list", JSON.stringify(allTasks))
         }
     }
 
     return (
         <DataContext.Provider value={{
-            tasks, setTasks, handleChange, handleDelete, addTask, setAddTask, handleSubmit, searchTask, setSearchTask
+            tasks,
+            addTask,
+            searchTask,
+            setTasks,
+            setAddTask,
+            setSearchTask,
+            handleChange,
+            handleSubmit,
+            handleDelete
         }}>
             {children}
         </DataContext.Provider>

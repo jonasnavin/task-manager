@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Task from './Task'
-import { DataProvider } from '../context/DataContext'
+import DataContext from '../context/DataContext'
 import NewTask from './NewTask'
 import SearchTask from './SearchTask'
 
 const Main = () => {
+    const { tasks } = useContext(DataContext)
     return (
         <main className='main'>
-            <DataProvider>
                 <NewTask />
-                <SearchTask />
+                {tasks.length ? (<SearchTask />) : null}
                 <Task />
-            </DataProvider>
         </main>
     )
 }

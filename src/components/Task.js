@@ -10,8 +10,10 @@ const Task = () => {
             {
                 taskResult.length ? taskResult.map(task => (
                     <TaskList key={task.id} task={task} />
-                )) : (
-                    <p>No tasks to complete.</p>
+                )) : taskResult && !searchTask ? (
+                    <p style={{marginTop: '10rem', textAlign: 'center'}}>No tasks to complete.</p>
+                ) : (
+                    <p style={{marginTop: '10rem', textAlign: 'center'}}>Match not found.</p>
                 )
             }
         </ul>

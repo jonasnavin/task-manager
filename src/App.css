@@ -1,19 +1,150 @@
 .header {
     height: 10vh;
+    margin-bottom: 2rem;
 }
 
 .main {
-    min-height: 85vh;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer {
     height: 5vh;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
-.header, .footer {
-    background-color: rgb(10, 110, 187);
+.header,
+.footer {
+    background-color: #027373;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.add-form,
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    width: 50%;
+}
+
+.add-label,
+.search-label {
+    display: none;
+}
+
+.add-input,
+.search-input {
+    padding: 5px 2.5rem 5px 10px;
+    height: 2rem;
+    border: 1px solid #01403A;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.add-input::placeholder,
+.search-input::placeholder {
+    font-style: italic;
+}
+
+.add-input:focus,
+.search-input:focus {
+    border: 2px solid #027368;
+    border-radius: 1rem 0 0 5px;
+}
+
+.add-input:focus~.add-button,
+.add-button:hover {
+    background-color: rgb(56, 199, 78);
+    color: white;
+}
+
+.add-input:focus~.add-button,
+.search-input:focus~.search-button {
+    border: 2px solid #027368;
+    border-left: none;
+}
+
+.search-button {
+    font-size: large;
+}
+
+
+.add-button, .search-button {
+    padding: 5px 10px;
+    width: 4rem;
+    outline: none;
+    border: 1px solid #01403A;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+    background: inherit;
+    cursor: pointer;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 50%;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 2rem;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1.5px solid #014040;
+    border-radius: 5px;
+}
+
+.list {
+    flex-grow: 1;
+    min-height: 2rem;
+    align-content: center;
+    padding: 0 1rem;
+    margin: 0 2rem;
+    cursor: pointer;
+}
+
+.check-list {
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 0 5p 5px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete-button {
+    position: absolute;
+    right: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: red;
+    color: rgb(247, 243, 243);
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 720px) {
+    .add-form, .search-form, .task-list {
+      width: 80%;
+    }
+  }

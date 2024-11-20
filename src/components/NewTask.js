@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import DataContext from '../context/DataContext'
+import { FaPlus } from 'react-icons/fa'
 
 const NewTask = () => {
     const { addTask, setAddTask, handleSubmit } = useContext(DataContext)
     return (
         <form
             onSubmit={e => e.preventDefault()}
-            className='task-form'
+            className='add-form'
         >
             <label
                 htmlFor='add-task'
@@ -21,15 +22,18 @@ const NewTask = () => {
                 id='add-task'
                 className='add-input'
                 autoFocus
+                autoComplete='off'
                 value={addTask}
                 onChange={e => setAddTask(e.target.value)}
             />
-            <button
-                type='submit'
-                onClick={handleSubmit}
-            >
-                Add
-            </button>
+            {addTask &&
+                <button
+                    className='add-button'
+                    type='submit'
+                    onClick={handleSubmit}
+                >
+                    <FaPlus />
+                </button>}
         </form>
     )
 }

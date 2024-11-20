@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import DataContext from '../context/DataContext'
-import { FaTrashAlt } from 'react-icons/fa'
+import { TbTrashXFilled } from 'react-icons/tb'
 
 const TaskList = ({ task }) => {
     const { handleChange, handleDelete } = useContext(DataContext)
@@ -19,11 +19,12 @@ const TaskList = ({ task }) => {
             >
                 {task.data}
             </label>
-            <FaTrashAlt
+            <button
                 className='delete-button'
-                role='button'
                 onClick={() => handleDelete(task.id)}
-            />
+            >
+                <TbTrashXFilled />
+            </button>
         </li>
     )
 }
