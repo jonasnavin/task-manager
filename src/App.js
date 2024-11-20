@@ -8,7 +8,7 @@ import { DataProvider } from './context/DataContext'
 const App = () => {
   return (
     <DataProvider>
-      <Header />
+      {/* <Header /> */}
       <Main />
       <Footer />
     </DataProvider>
