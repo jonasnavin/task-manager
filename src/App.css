@@ -44,7 +44,7 @@
     padding: 5px 2.5rem 5px 10px;
     height: 2rem;
     border: 1px solid #01403A;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     outline: none;
     font-size: 1rem;
     width: 100%;
@@ -58,12 +58,12 @@
 .add-input:focus,
 .search-input:focus {
     border: 2px solid #027368;
-    border-radius: 1rem 0 0 5px;
+    border-radius: 5px 0 0 5px;
 }
 
 .add-input:focus~.add-button,
 .add-button:hover {
-    background-color: rgb(56, 199, 78);
+    background-color: rgb(5, 200, 34);
     color: white;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .search-button {
-    font-size: large;
+    font-size: larger;
 }
 
 
